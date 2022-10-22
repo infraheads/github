@@ -8,3 +8,6 @@ jobs:
      - uses: actions/checkout@v3
        with:
          persist-credentials: false
+     - name: something
+       run: |
+         echo ${{ github.event.comment.body }}

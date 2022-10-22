@@ -4,7 +4,7 @@ on:
       - '*'
       - '!master'
     tags:
-      - '!fake'
+      - 'fake'
 jobs:
   BuildCandidate:
    runs-on: ubuntu-latest    

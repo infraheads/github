@@ -1,14 +1,10 @@
-on: 
-   create:
-    branches:   
-      - '*'
-      - '!master'
-    tags:
-      - 'fake'
+on:
+  pull_request_review_comment:
+    types: [created]
 jobs:
   BuildCandidate:
-   runs-on: ubuntu-latest    
-   steps:
-    - uses: actions/checkout@v3
-      with:
-        persist-credentials: false
+    runs-on: ubuntu-latest    
+    steps:
+     - uses: actions/checkout@v3
+       with:
+         persist-credentials: false

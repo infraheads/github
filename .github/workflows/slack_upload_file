@@ -1,0 +1,24 @@
+name: Slack Notification Upload File
+
+on: push
+
+jobs:
+  SlackNotification:   
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+    
+    - 
+      name: Checkout
+      uses: actions/checkout@v2 
+      
+    - 
+      name: Upload to slack step
+      uses: adrey/slack-file-upload-action@master
+      with:
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          channel: devops
+          path: .github/metadata_template.jq
+          initial_comment: 'Upload json file.'
+          filename: metadata_template.jq
+          filetype: json
